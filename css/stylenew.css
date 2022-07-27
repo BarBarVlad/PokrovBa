@@ -241,7 +241,16 @@ body._lock {
 		#calendarr a:hover {
 			color: FireBrick;
 		}
+/*#calendarr.dates2{}
+#calendarr.td2 {
+	display: flex;
+}
+#calendarr.td2 td{}
+#calendarr.td2 div{
+			color: #000033;
+			font-size: 25px;
 
+}*/
 
 /*-------------------------*/
 body._pc .menu__list > li:hover .menu__sub-list {
@@ -714,19 +723,38 @@ body._touch .menu__list > li._active .menu__arrow {
 		/*!!!!!!!!!!!!!!!!*/
 		min-width: 0;
 		/*!!!!!!!!!!!!!!!!*/
-
+		max-height: 430px;
 		padding: 0px 0px 58% 0px;
 		background-color: #5e5373;
 		margin-botton: 10px;
+	}
+	.two-block__text h2{
+		font-size: 27px;
+		text-align: center;
+		/*!!!!!!!!!!!!!!!!*/
+		min-width: 0;
+		/*!!!!!!!!!!!!!!!!*/
+		color: #5e5373;
+		/*line-height: 25px;*/
 	}
 	.two-block__text{
 
 		/*!!!!!!!!!!!!!!!!*/
 		min-width: 0;
 		/*!!!!!!!!!!!!!!!!*/
+		color: #5e5373;
+		/*line-height: 22px;*/
+	}
+	.two-block__text p{
+		font-size: 18px;
+		text-align:justify;
+		/*!!!!!!!!!!!!!!!!*/
+		min-width: 0;
+		/*!!!!!!!!!!!!!!!!*/
 
-		color: #fff;
-		line-height: 25px;
+		/*color: #fff;*/
+		line-height: 22px;
+		padding: 2px 5px;
 	}
 
 }
@@ -817,19 +845,38 @@ body._touch .menu__list > li._active .menu__arrow {
 		/*!!!!!!!!!!!!!!!!*/
 		min-width: 0;
 		/*!!!!!!!!!!!!!!!!*/
-
+		max-height: 430px;
 		padding: 0px 0px 58% 0px;
 		background-color: #5e5373;
 		margin-botton: 10px;
+	}
+	.two-block__text h2{
+		font-size: 27px;
+		text-align: center;
+		/*!!!!!!!!!!!!!!!!*/
+		min-width: 0;
+		/*!!!!!!!!!!!!!!!!*/
+		color: #5e5373;
+		/*line-height: 25px;*/
 	}
 	.two-block__text{
 
 		/*!!!!!!!!!!!!!!!!*/
 		min-width: 0;
 		/*!!!!!!!!!!!!!!!!*/
+		color: #5e5373;
+		/*line-height: 22px;*/
+	}
+	.two-block__text p{
+		font-size: 18px;
+		text-align:justify;
+		/*!!!!!!!!!!!!!!!!*/
+		min-width: 0;
+		/*!!!!!!!!!!!!!!!!*/
 
-		color: #fff;
-		line-height: 25px;
+		/*color: #fff;*/
+		line-height: 22px;
+		padding: 2px 5px;
 	}
 	.page{
 
