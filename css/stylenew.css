@@ -264,6 +264,9 @@ body._touch .menu__list > li._active .menu__arrow {
 */	.shapka {
 		display: none;
 	}
+.container{
+	padding: 0px 0px 20px 0px;
+}
 	.header{
 		width: 100%;
 	}
