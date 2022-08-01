@@ -17,7 +17,7 @@ li{
 }
 img {
 	vertical-align: top;
-}/**/
+}
 h1,
 h2,
 h3,
@@ -39,6 +39,112 @@ body{
 body._lock {
 	overflow: hidden;
 }
+.headerx{
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 500px;
+	padding: 0px 0px 10px 0px;
+	margin: 0px auto;
+	justify-content: space-between;
+}
+.xnum{
+	width: 40px;
+	height: 40px;
+	border-radius: 0 50% ;
+	border: 1px solid #5e5373;
+	background-color: #77608d;
+	opacity: 0.4;
+}
+.x{
+	cursor: default;
+}
+.xtext{
+	text-align: center;
+	padding: 7px;
+	color: #CCCCCF;
+}
+
+.xlevel{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0px 5px;
+}
+
+.xleveltext{}
+.xlevel1 div{
+	padding: 3px 0px 7px 9px;
+	color: #CCCCCF;
+}
+@keyframes example {
+    from {background-color: #77608d;}
+    to {background-color: yellow;}
+}
+
+.xlevel1{
+	width: 30px;
+	height: 30px;
+	border-radius: 50% ;
+	border: 1px solid #5e5373;
+	background-color: #77608d;
+	margin:5px 5px 0px 0px;
+	opacity: 0.4;
+}
+
+.zadanie{
+	width: 180px;
+	height: 33px;
+	border-radius: 50%;
+	background-color: #77608d;
+	margin: 5px auto;
+}
+.zadanietext{
+
+}
+.xbody{
+	display: flex;
+	width: 200px;
+	flex-direction: row;
+	margin: 0px auto;
+}
+.xex{
+	width: 80px;
+	height: 33px;
+	border-radius: 50%;
+	background-color: #7a956b;
+	margin: 5px auto;
+}
+.xex3{
+    animation-name: example;
+    animation-duration: 4s;
+
+	width: 50px;
+	height: 33px;
+	border-radius: 50%;
+	border: 1px solid #000;
+	background-color: #7a956b;
+	margin: 5px auto;
+}
+.x1m,.proizvedenie{
+	border-radius: 50%;
+	text-align: center;
+	color: #000;
+	padding: 5px 0px 5px 0px;
+}
+.otv{
+    /*background-color: red;*/
+	width: 50px;
+	height: 33px;
+	border-radius: 50%;
+	border: 1px solid #5e5373;
+	background-color: #77608d;
+	margin: 5px 15px;
+}
+.otvtext{
+	text-align: center;
+	color: #fff;
+	padding: 5px 0px 0px 0px;
+}
+
 
 .wrpaper{
 	min-height: 100%;
@@ -150,12 +256,12 @@ margin: 15px 0px 0px 0px;
 .header__logo {
 	position: relative;
 	z-index: 5;
-	width: 40px;
-	height: 40px;
+	width: 55px;
+	height: 55px;
 }
 .header__logo img{
-	max-width: 40px;
-	max-height: 40px;
+	max-width: 55px;
+	max-height: 55px;
 	border-radius: 50% 50% 0 0;
 }
 .header__menu{
