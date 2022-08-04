@@ -1,39 +1,112 @@
-let h,xn,lv;
+let h,xn,lv=1,lvprev=1,f=0;
+var xnext=1;u2=0;
 let r=[[],[],[],[],[],[],[],[],[],[]];
-let k=[0,1,2,3,4,5,6,7,8,9];
-let s=k;
+var k=[0,1,2,3,4,5,6,7,8,9];
+var s=k,f1=1;
+var p=[0,1,2,3,4,5,6,7,8,9];
 let xnum = document.querySelectorAll('.xnum');
 let x1m = document.querySelectorAll('.x1m');
 let otvtext = document.querySelectorAll('.otvtext');
 let proizvedenie = document.querySelectorAll('.proizvedenie');
 let level1 = document.querySelectorAll('.xlevel1');
 let otv = document.querySelectorAll('.otv');
-let xex = document.querySelectorAll('.otv');
+let xex = document.querySelectorAll('.xex');
+let zadanietext = document.querySelectorAll('.zadanietext');
 let otvChet=[1,1,1,1,1,1,1,1,1,1];
+let yy=[11,12,13,14,15,16,17,18,19,20];
 tabumnog(r);
 stXnumX1m(1);
 Level1(1);
-peremesh(s);
-//colorXex(1);
-/*      let proizvedenieXY=proizvedenie[1].getBoundingClientRect();
-      let proizvedenieX=proizvedenieXY.left;
-      let otvXY=otv[1].getBoundingClientRect();
-      let otvX=otvXY.left;
-      console.log(proizvedenieX);
-      console.log(otvX);
-     let xx=otvX-proizvedenieX+'px';
-       console.log(xx);*/
+peremesh(p);
+colorXex(1);
+console.log('p='+p);
+      function obnulenieStyles() {
+        for (var i = 0; i < 10; i++) {
+          otv[i].style='transform: translateXY(0px)';
+          xex[i].style='animation-name: Xex';
+        }
+        if (lv!=1){
+          for (var i = 0; i < 10; i++) {
+            if (xnext==s[i]){f1=i;}
+          }
+           startXex(xnext);
+        }
+      }
+      function Yy(j) {
+            yy[j-1]=s[j-1]-(j-1);/*console.log('s[j-1] = ' +s[j-1]+ ' j-1='+(j-1)+' yy[j-1]='+yy[j-1]);*/
+            let i=j-1;
+          switch(yy[i]){
+            case 0: otv[i].style='animation-name: exampleDrive;animation-duration: 0.5s;animation-fill-mode: both;'; break;
+            case 1: otv[i].style='animation-name: yy1;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -1: otv[i].style='animation-name: yy_1;animation-duration: 0.5s;animation-fill-mode: both;'; break;
+            case 2: otv[i].style='animation-name: yy2;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -2: otv[i].style='animation-name: yy_2;animation-duration: 0.5s;animation-fill-mode: both;'; break;
+            case 3: otv[i].style='animation-name: yy3;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -3: otv[i].style='animation-name: yy_3;animation-duration: 0.5s;animation-fill-mode: both;'; break;
+            case 4: otv[i].style='animation-name: yy4;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -4: otv[i].style='animation-name: yy_4;animation-duration: 0.5s;animation-fill-mode: both;'; break;
+            case 5: otv[i].style='animation-name: yy5;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -5: otv[i].style='animation-name: yy_5;animation-duration: 0.5s;animation-fill-mode: both;'; break;
+            case 6: otv[i].style='animation-name: yy6;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -6: otv[i].style='animation-name: yy_6;animation-duration: 0.5s;animation-fill-mode: both;'; break;
+            case 7: otv[i].style='animation-name: yy7;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -7: otv[i].style='animation-name: yy_7;animation-duration: 0.5s;animation-fill-mode: both;'; break;
+            case 8: otv[i].style='animation-name: yy8;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -8: otv[i].style='animation-name: yy_8;animation-duration: 0.5s;animation-fill-mode: both;'; break;
+            case 9: otv[i].style='animation-name: yy9;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -9: otv[i].style='animation-name: yy_9;animation-duration: 0.5s;animation-fill-mode: both;'; break;
+          }
+      }
+      function YyBack(j) {
+            yy[j-1]=s[j-1]-(j-1);/*console.log('s[j-1] = ' +s[j-1]+ ' j-1='+(j-1)+' yy[j-1]='+yy[j-1]);*/
+            let i=j-1;
+          switch(yy[i]){
+            case 0: otv[i].style='animation-name: exampleDrive;animation-duration: 2.5s;'; break;
+            case 1: otv[i].style='animation-name: yy1;animation-duration: 2.5s;'; break; case -1: otv[i].style='animation-name: yy_1;animation-duration: 2.5s;'; break;
+            case 2: otv[i].style='animation-name: yy2;animation-duration: 2.5s;'; break; case -2: otv[i].style='animation-name: yy_2;animation-duration: 2.5s;'; break;
+            case 3: otv[i].style='animation-name: yy3;animation-duration: 2.5s;'; break; case -3: otv[i].style='animation-name: yy_3;animation-duration: 2.5s;'; break;
+            case 4: otv[i].style='animation-name: yy4;animation-duration: 2.5s;'; break; case -4: otv[i].style='animation-name: yy_4;animation-duration: 2.5s;'; break;
+            case 5: otv[i].style='animation-name: yy5;animation-duration: 2.5s;'; break; case -5: otv[i].style='animation-name: yy_5;animation-duration: 2.5s;'; break;
+            case 6: otv[i].style='animation-name: yy6;animation-duration: 2.5s;'; break; case -6: otv[i].style='animation-name: yy_6;animation-duration: 2.5s;'; break;
+            case 7: otv[i].style='animation-name: yy7;animation-duration: 2.5s;'; break; case -7: otv[i].style='animation-name: yy_7;animation-duration: 2.5s;'; break;
+            case 8: otv[i].style='animation-name: yy8;animation-duration: 2.5s;'; break; case -8: otv[i].style='animation-name: yy_8;animation-duration: 2.5s;'; break;
+            case 9: otv[i].style='animation-name: yy9;animation-duration: 2.5s;'; break; case -9: otv[i].style='animation-name: yy_9;animation-duration: 2.5s;'; break;
+          }
+      }
+
+    function startXex(x) {
+      if (lv==1 && x>-1) {
+        otv[x-1].style='animation-name: example; animation-duration: 2.5s;';
+        xex[x-1].style='animation-name: exampleXex; animation-direction: reverse; animation-duration: 2.5s; animation-fill-mode: both;';
+      }
+      if (x==-1) {x=1;
+        otv[x-1].style='animation-name: example; animation-duration: 2.5s;';
+        xex[x-1].style='animation-name: exampleXex1; animation-direction: reverse; animation-duration: 2.5s; animation-fill-mode: both;';
+      }
+      if (lv==2 || lv==3) {
+        if (lv==2){YyBack(f1+1);}
+        xex[xnext].style='animation-name: exampleXex; animation-direction: reverse; animation-duration: 2.5s; animation-fill-mode: both;';
+      }
+    }
     function colorXex(x) {
-      if (lv==1){proizvedenie[x-1].style='background-color: yellow';
+      if (lv==1){
+        xex[x-1].style='animation-name: exampleXex; animation-direction: reverse; animation-duration: 2.5s;animation-fill-mode: both;';
       }
     }
     function driveout(x) {
-      if (lv==1){otv[x-1].style='transform: translateX(0px)';
-      otvChet[x-1]=1;}
+      if (lv==1){
+        if (x!=1){otv[x-1].style='transform: translateX(0px)';
+                 xex[x-1].style='animation-name: Xex';}
+        if (x==xnext-1){xex[x].style='animation-name: Xex'; xnext=1; startXex(-1);}
+        otvChet[x-1]=1;
+      }
     }
     function drive(x) {
-     if (lv==1){otv[x-1].style='transform: translateX(-65px)';
-      otvChet[x-1]=-1;}
+     if (lv==1 && x==xnext){
+      otv[x-1].style='animation-name: exampleDrive; animation-duration: 0.5s;animation-fill-mode: both;';
+      xex[x-1].style='animation-name: exampleXex; animation-duration: 1s;animation-fill-mode: both;';
+      if(x<10){xex[x].style='animation-name: exampleXex; animation-duration: 1s; animation-direction: reverse; animation-fill-mode: both;';}
+      otvChet[x-1]=-1;
+      if(xnext<10){xnext=x+1;}
+     }
+     if (lv!=1 && s[x-1]==p[u2] && u2<10){
+      if (u2<10){u2++}
+        Yy(x);
+        xex[p[u2-1]].style='animation-name: exampleXex; animation-duration: 1s; animation-fill-mode: both;';
+        if (u2<10){xex[p[u2]].style='animation-name: exampleXex; animation-duration: 1s; animation-direction: reverse; animation-fill-mode: both;';
+        }
+     }
     }
     function peremesh(m) {
       for (i = m.length -1; i > 0; i--) {
@@ -41,37 +114,46 @@ peremesh(s);
         q = m[i]
         m[i] = m[j]
         m[j] = q
-      }
+      }console.log('m='+m);
     }
     function stXnumX1m(x) {
+      if (xnext==1){startXex(-1);}
       xn=x;
-      if (lv!=1) {peremesh(s);}
+      peremesh(s)
       var i;
       for (i = 0; i < 10; i++) {
         xnum[i].style="opacity: 0.6";
+        //сделать вывод на экран 1 раз (две следующие строки)
         otvtext[i].innerHTML=r[x-1][i];
         x1m[i].innerHTML=x+' x '+ (i+1) +' = ';
-        if (otvChet[i]==-1) {driveout(i+1)}
+        if (otvChet[i]==-1){driveout(i+1);}
         if (lv!=1) {otvtext[i].innerHTML=r[x-1][s[i]];}
         if (lv==3) {proizvedenie[i].innerHTML=r[x-1][i];proizvedenie[i].style='display: none';}
-        if (lv!=3) {proizvedenie[i].innerHTML=r[x-1][i];proizvedenie[i].style='display: visible';}
+        if (lv!=3) {proizvedenie[i].innerHTML=r[x-1][i];proizvedenie[i].style='display: visible';if (i==9 && lv==1) {driveout(1);}}
       }
       if (xnum[x-1]) {
         xnum[x-1].style="opacity: 1";
       }
+      if (lv==2 || lv==3) {u2=0; xnext=p[u2]; obnulenieStyles();}
     }
-    function Level1(x) {
+    function Level1(x) {lv=x;
+      if (lvprev!=1 && lv==1){
+        xnext=1;
+        obnulenieStyles();
+        lvprev=x;
+        stXnumX1m(xn);
+      }
       var i;
       for (i = 0; i < 3; i++) {
         level1[i].style="opacity: 0.6";
       }
       if (level1[x-1]) {
         level1[x-1].style="opacity: 1";
-        lv=x;
-        if (lv==1) {
+        if (lv==1 && xnext!=1) {
           stXnumX1m(xn);
         }
         if (lv!=1) {
+          xnext=p[0];
           peremesh(s);
           stXnumX1m(xn);
         }
@@ -86,12 +168,13 @@ peremesh(s);
             }
         }
       }
+      lvprev=x;
     }
     function tabumnog(mr){
      var i,j;
-     for (i = 0; i < 10; i++) {
-      for (j = 0; j < 10; j++) {
-        mr[i][j]=(i+1)*(j+1);
+      for (i = 0; i < 10; i++) {
+        for (j = 0; j < 10; j++) {
+          mr[i][j]=(i+1)*(j+1);
+        }
       }
     }
-  }

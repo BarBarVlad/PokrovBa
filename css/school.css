@@ -76,9 +76,117 @@ body._lock {
 	color: #CCCCCF;
 }
 @keyframes example {
-    from {background-color: #77608d;}
-    to {background-color: yellow;}
+    0%   {background-color:#77608d; left:0px; top:0px;}
+    50%   {background-color:green; left:-65px; top:0px;}
+    100%   {background-color:yellow; left:0px; top:0px;}
 }
+@keyframes Xex {
+ {background-color: #7a956b;}
+}
+@keyframes exampleXex {
+     0%  {background-color:yellow;}
+    100%   {background-color:green;}
+}
+@keyframes exampleXex1 {
+     0%  {background-color:yellow;}
+    100%   {background-color:green;}
+}
+@keyframes exampleDrive {
+    from  {background-color:#77608d; left:0px; top:0px;}
+    to   {background-color:green; left:-65px; top:0px;}
+}
+@keyframes yy1{
+    from  {background-color:#77608d; left:0px; top:0px;}
+    to   {background-color:green; left:-65px; top:38px;}
+}
+
+@keyframes yy_1{
+    from  {background-color:#77608d; left:0px; top:0px;}
+    to   {background-color:green; left:-65px; top:-38px;}
+}
+
+@keyframes yy2{
+    from  {background-color:#77608d; left:0px; top:0px;}
+    to   {background-color:green; left:-65px; top:76px;}
+}
+
+@keyframes yy_2{
+    from  {background-color:#77608d; left:0px; top:0px;}
+    to   {background-color:green; left:-65px; top:-76px;}
+}
+
+@keyframes yy3{
+    from  {background-color:#77608d; left:0px; top:0px;}
+    to   {background-color:green; left:-65px; top:114px;}
+}
+
+@keyframes yy_3{
+    from  {background-color:#77608d; left:0px; top:0px;}
+    to   {background-color:green; left:-65px; top:-114px;}
+}
+
+@keyframes yy4{
+    from  {background-color:#77608d; left:0px; top:0px;}
+    to   {background-color:green; left:-65px; top:152px;}
+}
+
+@keyframes yy_4{
+    from  {background-color:#77608d; left:0px; top:0px;}
+    to   {background-color:green; left:-65px; top:-152px;}
+}
+
+@keyframes yy5{
+    from  {background-color:#77608d; left:0px; top:0px;}
+    to   {background-color:green; left:-65px; top:190px;}
+}
+
+@keyframes yy_5{
+    from  {background-color:#77608d; left:0px; top:0px;}
+    to   {background-color:green; left:-65px; top:-190px;}
+}
+
+@keyframes yy6{
+    from  {background-color:#77608d; left:0px; top:0px;}
+    to   {background-color:green; left:-65px; top:228px;}
+}
+
+@keyframes yy_6{
+    from  {background-color:#77608d; left:0px; top:0px;}
+    to   {background-color:green; left:-65px; top:-228px;}
+}
+
+@keyframes yy7{
+    from  {background-color:#77608d; left:0px; top:0px;}
+    to   {background-color:green; left:-65px; top:266px;}
+}
+
+@keyframes yy_7{
+    from  {background-color:#77608d; left:0px; top:0px;}
+    to   {background-color:green; left:-65px; top:-266px;}
+}
+
+@keyframes yy8{
+    from  {background-color:#77608d; left:0px; top:0px;}
+    to   {background-color:green; left:-65px; top:304px;}
+}
+
+@keyframes yy_8{
+    from  {background-color:#77608d; left:0px; top:0px;}
+    to   {background-color:green; left:-65px; top:-304px;}
+}
+
+@keyframes yy9{
+    from  {background-color:#77608d; left:0px; top:0px;}
+    to   {background-color:green; left:-65px; top:342px;}
+}
+
+@keyframes yy_9{
+    from  {background-color:#77608d; left:0px; top:0px;}
+    to   {background-color:green; left:-65px; top:-342px;}
+}
+
+
+
 
 .xlevel1{
 	width: 30px;
@@ -98,7 +206,8 @@ body._lock {
 	margin: 5px auto;
 }
 .zadanietext{
-
+	margin: 3px auto;
+	text-align: center;
 }
 .xbody{
 	display: flex;
@@ -114,8 +223,6 @@ body._lock {
 	margin: 5px auto;
 }
 .xex3{
-    animation-name: example;
-    animation-duration: 4s;
 
 	width: 50px;
 	height: 33px;
@@ -131,7 +238,9 @@ body._lock {
 	padding: 5px 0px 5px 0px;
 }
 .otv{
-    /*background-color: red;*/
+/*    animation-name: example;
+    animation-duration: 2.5s;*/
+    position: relative;
 	width: 50px;
 	height: 33px;
 	border-radius: 50%;
