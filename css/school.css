@@ -39,6 +39,10 @@ body{
 body._lock {
 	overflow: hidden;
 }
+.otvAudio{
+
+}
+/*.x{display: none;}*/
 .headerx{
 	display: flex;
 	flex-wrap: wrap;
@@ -74,6 +78,10 @@ body._lock {
 .xlevel1 div{
 	padding: 3px 0px 7px 9px;
 	color: #CCCCCF;
+}
+@keyframes exampleRed {
+     0%  {background-color:#77608d;}
+    100%   {background-color:red;}
 }
 @keyframes example {
     0%   {background-color:#77608d; left:0px; top:0px;}
@@ -206,6 +214,7 @@ body._lock {
 	margin: 5px auto;
 }
 .zadanietext{
+	color: #CCCCCF;
 	margin: 3px auto;
 	text-align: center;
 }
@@ -250,7 +259,7 @@ body._lock {
 }
 .otvtext{
 	text-align: center;
-	color: #fff;
+	color: #CCCCCF;
 	padding: 5px 0px 0px 0px;
 }
 

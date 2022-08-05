@@ -1,4 +1,7 @@
 let h,xn,lv=1,lvprev=1,f=0;
+var kuku = new Audio('audio/kuku.wav');
+var yes = new Audio('audio/yes.wav');
+var bells = new Audio('audio/bells.wav');
 var xnext=1;u2=0;
 let r=[[],[],[],[],[],[],[],[],[],[]];
 var k=[0,1,2,3,4,5,6,7,8,9];
@@ -10,6 +13,7 @@ let otvtext = document.querySelectorAll('.otvtext');
 let proizvedenie = document.querySelectorAll('.proizvedenie');
 let level1 = document.querySelectorAll('.xlevel1');
 let otv = document.querySelectorAll('.otv');
+let otvAudio = document.querySelectorAll('.otvAudio');
 let xex = document.querySelectorAll('.xex');
 let zadanietext = document.querySelectorAll('.zadanietext');
 let otvChet=[1,1,1,1,1,1,1,1,1,1];
@@ -19,7 +23,7 @@ stXnumX1m(1);
 Level1(1);
 peremesh(p);
 colorXex(1);
-console.log('p='+p);
+/*console.log('p='+p);*/
       function obnulenieStyles() {
         for (var i = 0; i < 10; i++) {
           otv[i].style='transform: translateXY(0px)';
@@ -95,18 +99,29 @@ console.log('p='+p);
     function drive(x) {
      if (lv==1 && x==xnext){
       otv[x-1].style='animation-name: exampleDrive; animation-duration: 0.5s;animation-fill-mode: both;';
+      yes.play();
       xex[x-1].style='animation-name: exampleXex; animation-duration: 1s;animation-fill-mode: both;';
       if(x<10){xex[x].style='animation-name: exampleXex; animation-duration: 1s; animation-direction: reverse; animation-fill-mode: both;';}
       otvChet[x-1]=-1;
       if(xnext<10){xnext=x+1;}
-     }
+     } else{if (lv==1 && x!=xnext){
+              otv[x-1].style='animation-name: exampleRed; animation-duration: 0.5s;';
+              kuku.play();
+            }
+        }
+
      if (lv!=1 && s[x-1]==p[u2] && u2<10){
       if (u2<10){u2++}
         Yy(x);
+        yes.play();
         xex[p[u2-1]].style='animation-name: exampleXex; animation-duration: 1s; animation-fill-mode: both;';
         if (u2<10){xex[p[u2]].style='animation-name: exampleXex; animation-duration: 1s; animation-direction: reverse; animation-fill-mode: both;';
         }
-     }
+     }else{if (lv!=1 && s[x-1]!=p[u2] && u2<10){
+              otv[x-1].style='animation-name: exampleRed; animation-duration: 0.5s;';
+              kuku.play();
+            }
+      }
     }
     function peremesh(m) {
       for (i = m.length -1; i > 0; i--) {
@@ -114,7 +129,7 @@ console.log('p='+p);
         q = m[i]
         m[i] = m[j]
         m[j] = q
-      }console.log('m='+m);
+      }/*console.log('m='+m);*/
     }
     function stXnumX1m(x) {
       if (xnext==1){startXex(-1);}
