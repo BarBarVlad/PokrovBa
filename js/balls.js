@@ -26,8 +26,8 @@ stXnumX1m(1);
 Level1(1);
 peremesh(p);/*console.log('p='+p);*/
 colorXex(1);
-ballsgame(2);
-/*ball.addEventListener("click", myFunction);*/
+/*ballsgame(2);
+ball.addEventListener("click", myFunction);*/
   function myFunction() {
     for (var i = 0; i < 10; i++) {
       if (r[2-1][s[i]]==2*(p[0]+1)){
