@@ -39,10 +39,144 @@ body{
 body._lock {
 	overflow: hidden;
 }
-.otvAudio{
+.pole__balls{
+	width: 610px;
+	height: 330px;
+	background-color:#5e5373;
+	margin: 0px auto;
+	cursor: default;
+}
+#.balls{}
+.balls_menu{
+
+	height: 60px;
+	padding: 17px 0px;
+	background-color: #77608d;
+	text-align: center;
+	color: #CCCCCF;
+	font-size: 40px;
+}
+.balls{
+	display: flex;
+	position: relative;
+}
+.ball{
+	border:  1px solid #77608d;
+	font-size: 40px;
+	padding: 18px 0px;
+	width: 60px;
+	height: 60px;
+	background-color: #ffff00;
+	opacity: 0.8;
+	border-radius: 50% 50% ;
+	text-align: center;
+	color: #7a956b;
+	position: relative;
+}
+.ball_text{
+
 
 }
-/*.x{display: none;}*/
+
+@keyframes b0{
+	0%{top: 30px; left: 0px;}
+	10%{top: 210px; left: 110px;}
+	20%{top: 0px; left: 220px;}
+	30%{top: 210px; left: 330px;}
+	40%{top: 0px; left: 440px;}
+	50%{top: 210px; left: 550px;}
+	60%{top: 0px; left: 440px;}
+	70%{top: 210px; left: 330px;}
+	80%{top: 0px; left: 220px;}
+	90%{top: 210px; left: 110px;}
+	100%{top: 30px; left: 0px;}
+}
+@keyframes b1{
+	0%{top: 30px; left: 130px;}
+	10%{top: 105px; left: 130px;}
+	20%{top: 210px; left: 130px;}
+	30%{top: 105px; left: 200px;}
+	40%{top: 30px; left: 270px;}
+	50%{top: 105px; left: 340px;}
+	60%{top: 30px; left: 270px;}
+	70%{top: 105px; left: 330px;}
+	80%{top: 30px; left: 220px;}
+	90%{top: 105px; left: 110px;}
+	100%{top: 30px; left: 130px;}
+}
+@keyframes b2{
+	0%{top: 30px; left: -50px;}
+	25%{top: 210px; left: 10px;}
+	50%{top: 130px; left: 150px;}
+	100%{top: 30px; left: -50px;}
+}
+@keyframes b3{
+	0%{top:0px; left: 0px;}
+	25%{top: 40px; left: -180px;}
+	50%{top: 50px; left: -100px;}
+	100%{top: 0px; left: 0px;}
+}
+@keyframes b4{
+	0%{top: 0px; left: 40px;}
+	20%{top: 20px; left: -50px;}
+	40%{top: 120px; left: -100px;}
+	60%{top: 80px; left: -175px;}
+	80%{top: 20px; left: -100px;}
+	100%{top: 0px; left: 40px;}
+}
+@keyframes b5{
+	0%{top: 10px; left: 0px;}
+	10%{top: 210px; left: -60px;}
+	20%{top: 0px; left: -120px;}
+	30%{top: 210px; left: -180px;}
+	40%{top: 0px; left: -240px;}
+	50%{top: 210px; left: -180px;}
+	60%{top: 0px; left: -120px;}
+	70%{top: 210px; left: -60px;}
+	80%{top: 0px; left: 60px;}
+	90%{top: 210px; left: 30px;}
+	100%{top: 10px; left: 0px;}
+}
+@keyframes b6{
+	0%{top: 210px; left: 0px;}
+	10%{top: 170px; left: -25px;}
+	20%{top: 90px; left: 20px;}
+	30%{top: 10px; left: 90px;}
+	40%{top: 0px; left: 40px;}
+	50%{top: 110px; left: -50px;}
+	60%{top: 210px; left: -90px;}
+	70%{top: 110px; left: -130px;}
+	80%{top: 0px; left: -20px;}
+	90%{top: 110px; left: 90px;}
+	100%{top: 210px; left: 0px;}
+}
+@keyframes b7{
+	0%{top: 0px; left: 0px;}
+	20%{top: 5px; left: -150px;}
+	40%{top: 100px; left:-50px;}
+	60%{top: 210px; left: 50px;}
+	80%{top: 75px; left:-50px;}
+	100%{top: 0px; left: 0px;}
+}
+@keyframes b8{
+	0%{top: 0px; left: 0px;}
+	20%{top: 100px; left: 70px;}
+	40%{top: 210px; left: 0px;}
+	60%{top: 90px; left: -50px;}
+	80%{top: 0px; left: -50px;}
+	100%{top: 0px; left: 0px;}
+}
+@keyframes b9{
+	0%{top: 0px; left: 0px;}
+	20%{top: 100px; left: -200px;}
+	35%{top: 210px; left: -320px;}
+	50%{top: 210px; left: -530px;}
+	70%{top: 80px; left: -500px;}
+	85%{top: 70px; left: -250px;}
+	100%{top: 0px; left: 0px;}
+}
+
+.x{display: none;}
 .headerx{
 	display: flex;
 	flex-wrap: wrap;
@@ -85,7 +219,7 @@ body._lock {
      40%  {rotate: 5deg;}
      60%  {rotate: -5deg;}
      80%  {rotate: 5deg;}
-    100%   {background-color:#CD5C5C; rotate: -5deg;}
+    100%   {background-color:#B22222; rotate: -5deg;}
 }
 @keyframes example {
     0%   {background-color:#77608d; left:0px; top:0px;}
