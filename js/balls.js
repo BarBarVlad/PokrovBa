@@ -1,12 +1,15 @@
 let h,xn,lv=1,lvprev=1,f=0;
-var kuku = new Audio('../audio/kuku.wav');
-var yes = new Audio('../audio/yes.wav');
-var bells = new Audio('../audio/bells.wav');
+var kuku = new Audio('audio/kuku.wav');
+var yes = new Audio('audio/yes.wav');
+var bells = new Audio('audio/bells.wav');
 var xnext=1;u2=0;
 let r=[[],[],[],[],[],[],[],[],[],[]];
 var k=[0,1,2,3,4,5,6,7,8,9];
 var s=k,f1=1;
 var p=[0,1,2,3,4,5,6,7,8,9];
+let ball = document.querySelectorAll('.ball');
+let balls_menu = document.querySelector('.balls_menu');
+let ball_text = document.querySelectorAll('.ball_text');
 let xnum = document.querySelectorAll('.xnum');
 let x1m = document.querySelectorAll('.x1m');
 let otvtext = document.querySelectorAll('.otvtext');
@@ -21,9 +24,39 @@ let yy=[11,12,13,14,15,16,17,18,19,20];
 tabumnog(r);
 stXnumX1m(1);
 Level1(1);
-peremesh(p);
+peremesh(p);/*console.log('p='+p);*/
 colorXex(1);
-/*console.log('p='+p);*/
+ballsgame(2);
+/*ball.addEventListener("click", myFunction);*/
+  function myFunction() {
+    for (var i = 0; i < 10; i++) {
+      if (r[2-1][s[i]]==2*(p[0]+1)){
+        ball[i].style='color: green;';
+      }
+    }
+  }
+
+      function ballsgame(x) {
+        balls_menu.innerHTML=x+' x '+ p[0] +' = ';
+        for (var i = 0; i < 10; i++) {
+          ball[i].innerHTML=r[x-1][s[i]];
+          switch(i){
+            case 0: ball[i].style='animation-name: b0; animation-duration: 37s; animation-iteration-count:infinite; animation-timing-function: linear;'; break;
+            case 1: ball[i].style='animation-name: b1; animation-duration: 20s; animation-iteration-count:infinite; animation-timing-function: linear;'; break;
+            case 2: ball[i].style='animation-name: b2; animation-duration: 32s; animation-iteration-count:infinite; animation-timing-function: linear;'; break;
+            case 3: ball[i].style='animation-name: b3; animation-duration: 22s; animation-iteration-count:infinite; animation-timing-function: linear; animation-fill-mode: both;'; break;
+            case 4: ball[i].style='animation-name: b4; animation-duration: 15s; animation-iteration-count:infinite; animation-timing-function: linear;'; break;
+            case 5: ball[i].style='animation-name: b5; animation-duration: 35s; animation-iteration-count:infinite; animation-timing-function: linear; animation-fill-mode: both;'; break;
+            case 6: ball[i].style='animation-name: b6; animation-duration: 24s; animation-iteration-count:infinite; animation-timing-function: linear; animation-fill-mode: both;'; break;
+            case 7: ball[i].style='animation-name: b7; animation-duration: 40s; animation-iteration-count:infinite; animation-timing-function: linear; animation-fill-mode: both;'; break;
+            case 8: ball[i].style='animation-name: b8; animation-duration: 25s; animation-iteration-count:infinite; animation-timing-function: linear; animation-fill-mode: both;'; break;
+            case 9: ball[i].style='animation-name: b9; animation-duration: 30s; animation-iteration-count:infinite; animation-timing-function: linear; animation-fill-mode: both;'; break;
+          }
+        }
+
+      }
+
+
       function obnulenieStyles() {
         for (var i = 0; i < 10; i++) {
           otv[i].style='transform: translateXY(0px)';
@@ -93,18 +126,18 @@ colorXex(1);
         if (x!=1){otv[x-1].style='transform: translateX(0px)';
                  xex[x-1].style='animation-name: Xex';}
         if (x==xnext-1){xex[x].style='animation-name: Xex'; xnext=1; startXex(-1);}
-        otvChet[x-1]=1;
       }
+      otvChet[x-1]=1;
     }
     function drive(x) {
-     if (lv==1 && x==xnext){
+     if (lv==1 && x==xnext && otvChet[x-1]==1){
       otv[x-1].style='animation-name: exampleDrive; animation-duration: 0.5s;animation-fill-mode: both;';
       yes.play();
       xex[x-1].style='animation-name: exampleXex; animation-duration: 1s;animation-fill-mode: both;';
       if(x<10){xex[x].style='animation-name: exampleXex; animation-duration: 1s; animation-direction: reverse; animation-fill-mode: both;';}
       otvChet[x-1]=-1;
       if(xnext<10){xnext=x+1;}
-     } else{if (lv==1 && x!=xnext){
+     } else{if (lv==1 && x!=xnext && otvChet[x-1]!=-1){
               otv[x-1].style='animation-name: exampleRed; animation-duration: 0.5s;';
               kuku.play();
             }
@@ -112,12 +145,13 @@ colorXex(1);
 
      if (lv!=1 && s[x-1]==p[u2] && u2<10){
       if (u2<10){u2++}
+        otvChet[x-1]=-1;
         Yy(x);
         yes.play();
         xex[p[u2-1]].style='animation-name: exampleXex; animation-duration: 1s; animation-fill-mode: both;';
         if (u2<10){xex[p[u2]].style='animation-name: exampleXex; animation-duration: 1s; animation-direction: reverse; animation-fill-mode: both;';
         }
-     }else{if (lv!=1 && s[x-1]!=p[u2] && u2<10){
+     }else{if (lv!=1 && s[x-1]!=p[u2] && u2<10 && otvChet[x-1]!=-1){
               otv[x-1].style='animation-name: exampleRed; animation-duration: 0.5s;';
               kuku.play();
             }
@@ -144,7 +178,8 @@ colorXex(1);
         if (otvChet[i]==-1){driveout(i+1);}
         if (lv!=1) {otvtext[i].innerHTML=r[x-1][s[i]];}
         if (lv==3) {proizvedenie[i].innerHTML=r[x-1][i];proizvedenie[i].style='display: none';}
-        if (lv!=3) {proizvedenie[i].innerHTML=r[x-1][i];proizvedenie[i].style='display: visible';if (i==9 && lv==1) {driveout(1);}}
+        if (lv!=3) {proizvedenie[i].innerHTML=r[x-1][i];proizvedenie[i].style='display: visible';
+        if (i==9) {driveout(1);}}
       }
       if (xnum[x-1]) {
         xnum[x-1].style="opacity: 1";
