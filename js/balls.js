@@ -1,7 +1,7 @@
 let h,xn,lv=1,lvprev=1,f=0;
-var kuku = new Audio('audio/kuku.wav');
-var yes = new Audio('audio/yes.wav');
-var bells = new Audio('audio/bells.wav');
+var kuku = new Audio('../audio/kuku.wav');
+var yes = new Audio('../audio/yes.wav');
+var bells = new Audio('../audio/bells.wav');
 var xnext=1;u2=0;
 let r=[[],[],[],[],[],[],[],[],[],[]];
 var k=[0,1,2,3,4,5,6,7,8,9];
