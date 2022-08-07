@@ -176,7 +176,7 @@ body._lock {
 	100%{top: 0px; left: 0px;}
 }
 
-.x{display: none;}
+/*.x{display: none;}*/
 .headerx{
 	display: flex;
 	flex-wrap: wrap;
