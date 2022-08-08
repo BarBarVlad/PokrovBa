@@ -7,7 +7,11 @@ let r=[[],[],[],[],[],[],[],[],[],[]];
 var k=[0,1,2,3,4,5,6,7,8,9];
 var s=k,f1=1;
 var p=[0,1,2,3,4,5,6,7,8,9];
-let ball = document.querySelectorAll('.ball');
+var ibg=0;
+let oshibka=0;
+const ball = document.querySelectorAll('.ball');
+let xbody = document.querySelector('.xbody');
+let pole__balls = document.querySelector('.pole__balls');
 let balls_menu = document.querySelector('.balls_menu');
 let ball_text = document.querySelectorAll('.ball_text');
 let xnum = document.querySelectorAll('.xnum');
@@ -24,83 +28,97 @@ let yy=[11,12,13,14,15,16,17,18,19,20];
 tabumnog(r);
 stXnumX1m(1);
 Level1(1);
-peremesh(p);/*console.log('p='+p);*/
 colorXex(1);
-/*ballsgame(2);
-ball.addEventListener("click", myFunction);*/
-  function myFunction() {
-    for (var i = 0; i < 10; i++) {
-      if (r[2-1][s[i]]==2*(p[0]+1)){
-        ball[i].style='color: green;';
+function ballsGame(x) {
+  ballsGameStyle(x);
+  balls_menu.innerHTML=x+' x '+ (p[ibg]+1) +' = ';
+  ball.forEach(onBallClick)
+      function onBallClick(item,index,arr) {
+        item.addEventListener("click", function(){
+          if (p[ibg]==index) {
+            arr[index].style='color: green;';
+            bells.play();
+            otvChet[index]=-1;
+            ibg++;
+          }
+          else{
+            if (otvChet[index]==1) {
+              kuku.play();
+              balls_menu.style='animation-name: Red; animation-duration: 0.5s;';
+              oshibka++;
+            }
+          }
+          if(ibg<10){balls_menu.innerHTML=x+' x '+ (p[ibg]+1) +' = ';}
+          if(ibg==10){balls_menu.innerHTML='Ошибок: '+oshibka; }
+       });
+      }
+}
+    function ballsGameStyle(x) {
+      peremesh(p);
+      peremesh(s);
+      for (var i = 0; i < 10; i++) {
+        ball[i].innerHTML=r[x-1][i];
+        switch(i){
+          case 0: ball[i].style='animation-name: b0; animation-duration: 67s; animation-iteration-count:infinite; animation-timing-function: linear;'; break;
+          case 1: ball[i].style='animation-name: b1; animation-duration: 27s; animation-iteration-count:infinite; animation-timing-function: linear;'; break;
+          case 2: ball[i].style='animation-name: b2; animation-duration: 32s; animation-iteration-count:infinite; animation-timing-function: linear;'; break;
+          case 3: ball[i].style='animation-name: b3; animation-duration: 22s; animation-iteration-count:infinite; animation-timing-function: linear; animation-fill-mode: both;'; break;
+          case 4: ball[i].style='animation-name: b4; animation-duration: 15s; animation-iteration-count:infinite; animation-timing-function: linear;'; break;
+          case 5: ball[i].style='animation-name: b5; animation-duration: 65s; animation-iteration-count:infinite; animation-timing-function: linear; animation-fill-mode: both;'; break;
+          case 6: ball[i].style='animation-name: b6; animation-duration: 44s; animation-iteration-count:infinite; animation-timing-function: linear; animation-fill-mode: both;'; break;
+          case 7: ball[i].style='animation-name: b7; animation-duration: 40s; animation-iteration-count:infinite; animation-timing-function: linear; animation-fill-mode: both;'; break;
+          case 8: ball[i].style='animation-name: b8; animation-duration: 25s; animation-iteration-count:infinite; animation-timing-function: linear; animation-fill-mode: both;'; break;
+          case 9: ball[i].style='animation-name: b9; animation-duration: 30s; animation-iteration-count:infinite; animation-timing-function: linear; animation-fill-mode: both;'; break;
+        }
+      }
+
+    }
+
+
+    function obnulenieStyles() {
+      for (var i = 0; i < 10; i++) {
+        otv[i].style='transform: translateXY(0px)';
+        xex[i].style='animation-name: Xex';
+      }
+      if (lv!=1){
+        for (var i = 0; i < 10; i++) {
+          if (xnext==s[i]){f1=i;}
+        }
+        startXex(xnext);
       }
     }
-  }
-
-      function ballsgame(x) {
-        balls_menu.innerHTML=x+' x '+ p[0] +' = ';
-        for (var i = 0; i < 10; i++) {
-          ball[i].innerHTML=r[x-1][s[i]];
-          switch(i){
-            case 0: ball[i].style='animation-name: b0; animation-duration: 37s; animation-iteration-count:infinite; animation-timing-function: linear;'; break;
-            case 1: ball[i].style='animation-name: b1; animation-duration: 20s; animation-iteration-count:infinite; animation-timing-function: linear;'; break;
-            case 2: ball[i].style='animation-name: b2; animation-duration: 32s; animation-iteration-count:infinite; animation-timing-function: linear;'; break;
-            case 3: ball[i].style='animation-name: b3; animation-duration: 22s; animation-iteration-count:infinite; animation-timing-function: linear; animation-fill-mode: both;'; break;
-            case 4: ball[i].style='animation-name: b4; animation-duration: 15s; animation-iteration-count:infinite; animation-timing-function: linear;'; break;
-            case 5: ball[i].style='animation-name: b5; animation-duration: 35s; animation-iteration-count:infinite; animation-timing-function: linear; animation-fill-mode: both;'; break;
-            case 6: ball[i].style='animation-name: b6; animation-duration: 24s; animation-iteration-count:infinite; animation-timing-function: linear; animation-fill-mode: both;'; break;
-            case 7: ball[i].style='animation-name: b7; animation-duration: 40s; animation-iteration-count:infinite; animation-timing-function: linear; animation-fill-mode: both;'; break;
-            case 8: ball[i].style='animation-name: b8; animation-duration: 25s; animation-iteration-count:infinite; animation-timing-function: linear; animation-fill-mode: both;'; break;
-            case 9: ball[i].style='animation-name: b9; animation-duration: 30s; animation-iteration-count:infinite; animation-timing-function: linear; animation-fill-mode: both;'; break;
-          }
+    function Yy(j) {
+          yy[j-1]=s[j-1]-(j-1);/*console.log('s[j-1] = ' +s[j-1]+ ' j-1='+(j-1)+' yy[j-1]='+yy[j-1]);*/
+          let i=j-1;
+        switch(yy[i]){
+          case 0: otv[i].style='animation-name: exampleDrive;animation-duration: 0.5s;animation-fill-mode: both;'; break;
+          case 1: otv[i].style='animation-name: yy1;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -1: otv[i].style='animation-name: yy_1;animation-duration: 0.5s;animation-fill-mode: both;'; break;
+          case 2: otv[i].style='animation-name: yy2;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -2: otv[i].style='animation-name: yy_2;animation-duration: 0.5s;animation-fill-mode: both;'; break;
+          case 3: otv[i].style='animation-name: yy3;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -3: otv[i].style='animation-name: yy_3;animation-duration: 0.5s;animation-fill-mode: both;'; break;
+          case 4: otv[i].style='animation-name: yy4;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -4: otv[i].style='animation-name: yy_4;animation-duration: 0.5s;animation-fill-mode: both;'; break;
+          case 5: otv[i].style='animation-name: yy5;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -5: otv[i].style='animation-name: yy_5;animation-duration: 0.5s;animation-fill-mode: both;'; break;
+          case 6: otv[i].style='animation-name: yy6;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -6: otv[i].style='animation-name: yy_6;animation-duration: 0.5s;animation-fill-mode: both;'; break;
+          case 7: otv[i].style='animation-name: yy7;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -7: otv[i].style='animation-name: yy_7;animation-duration: 0.5s;animation-fill-mode: both;'; break;
+          case 8: otv[i].style='animation-name: yy8;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -8: otv[i].style='animation-name: yy_8;animation-duration: 0.5s;animation-fill-mode: both;'; break;
+          case 9: otv[i].style='animation-name: yy9;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -9: otv[i].style='animation-name: yy_9;animation-duration: 0.5s;animation-fill-mode: both;'; break;
         }
-
-      }
-
-
-      function obnulenieStyles() {
-        for (var i = 0; i < 10; i++) {
-          otv[i].style='transform: translateXY(0px)';
-          xex[i].style='animation-name: Xex';
+    }
+    function YyBack(j) {
+          yy[j-1]=s[j-1]-(j-1);/*console.log('s[j-1] = ' +s[j-1]+ ' j-1='+(j-1)+' yy[j-1]='+yy[j-1]);*/
+          let i=j-1;
+        switch(yy[i]){
+          case 0: otv[i].style='animation-name: exampleDrive;animation-duration: 2.5s;'; break;
+          case 1: otv[i].style='animation-name: yy1;animation-duration: 2.5s;'; break; case -1: otv[i].style='animation-name: yy_1;animation-duration: 2.5s;'; break;
+          case 2: otv[i].style='animation-name: yy2;animation-duration: 2.5s;'; break; case -2: otv[i].style='animation-name: yy_2;animation-duration: 2.5s;'; break;
+          case 3: otv[i].style='animation-name: yy3;animation-duration: 2.5s;'; break; case -3: otv[i].style='animation-name: yy_3;animation-duration: 2.5s;'; break;
+          case 4: otv[i].style='animation-name: yy4;animation-duration: 2.5s;'; break; case -4: otv[i].style='animation-name: yy_4;animation-duration: 2.5s;'; break;
+          case 5: otv[i].style='animation-name: yy5;animation-duration: 2.5s;'; break; case -5: otv[i].style='animation-name: yy_5;animation-duration: 2.5s;'; break;
+          case 6: otv[i].style='animation-name: yy6;animation-duration: 2.5s;'; break; case -6: otv[i].style='animation-name: yy_6;animation-duration: 2.5s;'; break;
+          case 7: otv[i].style='animation-name: yy7;animation-duration: 2.5s;'; break; case -7: otv[i].style='animation-name: yy_7;animation-duration: 2.5s;'; break;
+          case 8: otv[i].style='animation-name: yy8;animation-duration: 2.5s;'; break; case -8: otv[i].style='animation-name: yy_8;animation-duration: 2.5s;'; break;
+          case 9: otv[i].style='animation-name: yy9;animation-duration: 2.5s;'; break; case -9: otv[i].style='animation-name: yy_9;animation-duration: 2.5s;'; break;
         }
-        if (lv!=1){
-          for (var i = 0; i < 10; i++) {
-            if (xnext==s[i]){f1=i;}
-          }
-           startXex(xnext);
-        }
-      }
-      function Yy(j) {
-            yy[j-1]=s[j-1]-(j-1);/*console.log('s[j-1] = ' +s[j-1]+ ' j-1='+(j-1)+' yy[j-1]='+yy[j-1]);*/
-            let i=j-1;
-          switch(yy[i]){
-            case 0: otv[i].style='animation-name: exampleDrive;animation-duration: 0.5s;animation-fill-mode: both;'; break;
-            case 1: otv[i].style='animation-name: yy1;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -1: otv[i].style='animation-name: yy_1;animation-duration: 0.5s;animation-fill-mode: both;'; break;
-            case 2: otv[i].style='animation-name: yy2;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -2: otv[i].style='animation-name: yy_2;animation-duration: 0.5s;animation-fill-mode: both;'; break;
-            case 3: otv[i].style='animation-name: yy3;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -3: otv[i].style='animation-name: yy_3;animation-duration: 0.5s;animation-fill-mode: both;'; break;
-            case 4: otv[i].style='animation-name: yy4;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -4: otv[i].style='animation-name: yy_4;animation-duration: 0.5s;animation-fill-mode: both;'; break;
-            case 5: otv[i].style='animation-name: yy5;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -5: otv[i].style='animation-name: yy_5;animation-duration: 0.5s;animation-fill-mode: both;'; break;
-            case 6: otv[i].style='animation-name: yy6;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -6: otv[i].style='animation-name: yy_6;animation-duration: 0.5s;animation-fill-mode: both;'; break;
-            case 7: otv[i].style='animation-name: yy7;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -7: otv[i].style='animation-name: yy_7;animation-duration: 0.5s;animation-fill-mode: both;'; break;
-            case 8: otv[i].style='animation-name: yy8;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -8: otv[i].style='animation-name: yy_8;animation-duration: 0.5s;animation-fill-mode: both;'; break;
-            case 9: otv[i].style='animation-name: yy9;animation-duration: 0.5s;animation-fill-mode: both;'; break; case -9: otv[i].style='animation-name: yy_9;animation-duration: 0.5s;animation-fill-mode: both;'; break;
-          }
-      }
-      function YyBack(j) {
-            yy[j-1]=s[j-1]-(j-1);/*console.log('s[j-1] = ' +s[j-1]+ ' j-1='+(j-1)+' yy[j-1]='+yy[j-1]);*/
-            let i=j-1;
-          switch(yy[i]){
-            case 0: otv[i].style='animation-name: exampleDrive;animation-duration: 2.5s;'; break;
-            case 1: otv[i].style='animation-name: yy1;animation-duration: 2.5s;'; break; case -1: otv[i].style='animation-name: yy_1;animation-duration: 2.5s;'; break;
-            case 2: otv[i].style='animation-name: yy2;animation-duration: 2.5s;'; break; case -2: otv[i].style='animation-name: yy_2;animation-duration: 2.5s;'; break;
-            case 3: otv[i].style='animation-name: yy3;animation-duration: 2.5s;'; break; case -3: otv[i].style='animation-name: yy_3;animation-duration: 2.5s;'; break;
-            case 4: otv[i].style='animation-name: yy4;animation-duration: 2.5s;'; break; case -4: otv[i].style='animation-name: yy_4;animation-duration: 2.5s;'; break;
-            case 5: otv[i].style='animation-name: yy5;animation-duration: 2.5s;'; break; case -5: otv[i].style='animation-name: yy_5;animation-duration: 2.5s;'; break;
-            case 6: otv[i].style='animation-name: yy6;animation-duration: 2.5s;'; break; case -6: otv[i].style='animation-name: yy_6;animation-duration: 2.5s;'; break;
-            case 7: otv[i].style='animation-name: yy7;animation-duration: 2.5s;'; break; case -7: otv[i].style='animation-name: yy_7;animation-duration: 2.5s;'; break;
-            case 8: otv[i].style='animation-name: yy8;animation-duration: 2.5s;'; break; case -8: otv[i].style='animation-name: yy_8;animation-duration: 2.5s;'; break;
-            case 9: otv[i].style='animation-name: yy9;animation-duration: 2.5s;'; break; case -9: otv[i].style='animation-name: yy_9;animation-duration: 2.5s;'; break;
-          }
-      }
+    }
 
     function startXex(x) {
       if (lv==1 && x>-1) {
@@ -168,19 +186,21 @@ ball.addEventListener("click", myFunction);*/
     function stXnumX1m(x) {
       if (xnext==1){startXex(-1);}
       xn=x;
-      peremesh(s)
+      peremesh(p);
+      peremesh(s);
       var i;
       for (i = 0; i < 10; i++) {
         xnum[i].style="opacity: 0.6";
-        //сделать вывод на экран 1 раз (две следующие строки)
         otvtext[i].innerHTML=r[x-1][i];
         x1m[i].innerHTML=x+' x '+ (i+1) +' = ';
-        if (otvChet[i]==-1){driveout(i+1);}
+        if (otvChet[i]==-1 && lv==1){driveout(i+1);}
+        if (otvChet[i]==-1 && lv==4){otvChet[i]=1;}
         if (lv!=1) {otvtext[i].innerHTML=r[x-1][s[i]];}
         if (lv==3) {proizvedenie[i].innerHTML=r[x-1][i];proizvedenie[i].style='display: none';}
         if (lv!=3) {proizvedenie[i].innerHTML=r[x-1][i];proizvedenie[i].style='display: visible';
         if (i==9) {driveout(1);}}
       }
+      if (lv==4) {ibg=0; oshibka=0;ballsGame(xn);}
       if (xnum[x-1]) {
         xnum[x-1].style="opacity: 1";
       }
@@ -194,7 +214,7 @@ ball.addEventListener("click", myFunction);*/
         stXnumX1m(xn);
       }
       var i;
-      for (i = 0; i < 3; i++) {
+      for (i = 0; i < 4; i++) {
         level1[i].style="opacity: 0.6";
       }
       if (level1[x-1]) {
@@ -212,11 +232,19 @@ ball.addEventListener("click", myFunction);*/
             if (lv==3) {proizvedenie[i].style='display: none';}
           }
         }
-        if (lv!=3) {
+        if (lv==1 || lv==2) {
             for (i = 0; i < 10; i++) {
               if (lv!=3) {proizvedenie[i].style='display: visible';}
             }
         }
+      }
+      if (lv!=4) {
+        pole__balls.style='display: none';
+        xbody.style='display: visible';
+      }
+      if (lv==4) {
+        xbody.style='display: none';
+        pole__balls.style='display: visible';
       }
       lvprev=x;
     }

@@ -54,7 +54,7 @@ body._lock {
 	background-color: #77608d;
 	text-align: center;
 	color: #CCCCCF;
-	font-size: 40px;
+	font-size: 30px;
 }
 .balls{
 	display: flex;
@@ -212,6 +212,10 @@ body._lock {
 .xlevel1 div{
 	padding: 3px 0px 7px 9px;
 	color: #CCCCCF;
+}
+@keyframes Red {
+     0%  {color:#CCCCCF;}
+    100%   {color:#B22222;}
 }
 @keyframes exampleRed {
      0%  {background-color:#77608d;rotate: 5deg;}
