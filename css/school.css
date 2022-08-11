@@ -49,7 +49,6 @@ body._lock {
 #.balls{}
 .balls_menu{
 
-	height: 60px;
 	padding: 17px 0px;
 	background-color: #77608d;
 	text-align: center;
@@ -58,6 +57,7 @@ body._lock {
 }
 .balls{
 	display: flex;
+	flex-wrap: wrap;
 	position: relative;
 }
 .ball{
@@ -356,10 +356,97 @@ body._lock {
 	margin: 5px auto;
 }
 .zadanietext{
-	color: #CCCCCF;
+	color:   #CCCCCF;
 	margin: 3px auto;
 	text-align: center;
 }
+@media (max-width: 767px){
+	.pole__balls{
+		display: flex;
+		flex-wrap: wrap;
+		width: 200px;
+		height: 400px;
+
+	}
+	.balls_menu{
+		width: 200px;
+		padding-top: 3px;
+		height: 30px;
+		font-size: 22px;
+	}
+
+	.zadanie{
+		width: 150px;
+		height: 30px;
+		border-radius: 50%;
+		background-color: #77608d;
+		margin: 5px auto;
+	}
+	.zadanietext{
+		color: #CCCCCF;
+		margin: 3px auto;
+		text-align: center;
+	}
+	.ball{
+		font-size: 26px;
+		padding-top: 8px;
+		width: 40px;
+		height: 40px;
+	}
+	@keyframes b0{
+		0%{top: 80px; left: 0px;}
+		50%{top: 330px; left: 0px;}
+		100%{top: 80px; left: 0px;}
+	}
+	@keyframes b2{
+		0%{top: 80px; left: 0px;}
+		50%{top: 330px; left: 0px;}
+		100%{top: 80px; left: 0px;}
+	}
+	@keyframes b4{
+		0%{top: 80px; left: 0px;}
+		50%{top: 330px; left: 0px;}
+		100%{top: 80px; left: 0px;}
+	}
+	@keyframes b1{
+		0%{top: 330px; left: 0px;}
+		50%{top: 80px; left: 0px;}
+		100%{top: 330px; left: 0px;}
+	}
+	@keyframes b3{
+		0%{top: 330px; left: 0px;}
+		50%{top: 80px; left: 0px;}
+		100%{top: 330px; left: 0px;}
+	}
+	@keyframes b5{
+		0%{top: 120px; left: 0px;}
+		50%{top: 120px; left: 160px;}
+		100%{top: 120px; left: 0px;}
+	}
+	@keyframes b7{
+		0%{top: 200px; left: -80px;}
+		50%{top: 200px; left: 80px;}
+		100%{top: 200px; left: -80px;}
+	}
+	@keyframes b9{
+		0%{top: 280px; left: -160px;}
+		50%{top: 280px; left: 0px;}
+		100%{top: 280px; left: -160px;}
+	}
+	@keyframes b6{
+		0%{top: 160px; left: 120px;}
+		50%{top: 160px; left: -40px;}
+		100%{top: 160px; left: 120px;}
+	}
+	@keyframes b8{
+		0%{top: 240px; left: 40px;}
+		50%{top: 240px; left: -120px;}
+		100%{top: 240px; left: 40px;}
+	}
+}
+
+
+
 .xbody{
 	display: flex;
 	width: 200px;
@@ -516,12 +603,12 @@ margin: 15px 0px 0px 0px;
 .header__logo {
 	position: relative;
 	z-index: 5;
-	width: 55px;
-	height: 55px;
+	width: 45px;
+	height: auto;
 }
 .header__logo img{
-	max-width: 55px;
-	max-height: 55px;
+	max-width: 45px;
+	max-height: auto;
 	border-radius: 50% 50% 0 0;
 }
 .header__menu{
