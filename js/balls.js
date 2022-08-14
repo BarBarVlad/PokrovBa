@@ -8,7 +8,7 @@ var k=[0,1,2,3,4,5,6,7,8,9];
 var s=k,f1=1;
 var p=[0,1,2,3,4,5,6,7,8,9];
 var ibg=0;
-let oshibka=0;
+var oshibka=0;
 const ball = document.querySelectorAll('.ball');
 let xbody = document.querySelector('.xbody');
 let pole__balls = document.querySelector('.pole__balls');
@@ -28,30 +28,31 @@ let yy=[11,12,13,14,15,16,17,18,19,20];
 tabumnog(r);
 stXnumX1m(1);
 Level1(1);
-colorXex(1);
+colorXex(1);iosh=0;
 function ballsGame(x) {
   ballsGameStyle(x);
   balls_menu.innerHTML=x+' x '+ (p[ibg]+1) +' = ';
-  ball.forEach(onBallClick)
-      function onBallClick(item,index,arr) {
-        item.addEventListener("click", function(){
-          if (p[ibg]==index) {
-            arr[index].style='color: green;';
-            bells.play();
-            otvChet[index]=-1;
-            ibg++;
-          }
-          else{
-            if (otvChet[index]==1) {
-              kuku.play();
-              balls_menu.style='animation-name: Red; animation-duration: 0.5s;';
-              oshibka++;
-            }
-          }
-          if(ibg<10){balls_menu.innerHTML=x+' x '+ (p[ibg]+1) +' = ';}
-          if(ibg==10){balls_menu.innerHTML='Ошибок: '+oshibka; }
-       });
+  ball.forEach(onBallClick);
+  iosh++;
+}
+function onBallClick(item,index,arr) {
+  item.addEventListener("click", function(){
+    if (p[ibg]==index) {
+      arr[index].style='color: green;';
+      bells.play();
+      otvChet[index]=-1;
+      ibg++;
+    }
+    else{
+      if (otvChet[index]==1) {
+        kuku.play();
+        balls_menu.style='animation-name: Red; animation-duration: 0.5s;';
+        oshibka++;
       }
+    }
+    if(ibg<10){balls_menu.innerHTML=xn+' x '+ (p[ibg]+1) +' = ';}
+    if(ibg==10){balls_menu.innerHTML='Ошибок: '+oshibka/iosh;}
+ });
 }
     function ballsGameStyle(x) {
       peremesh(p);
@@ -191,6 +192,7 @@ function ballsGame(x) {
       var i;
       for (i = 0; i < 10; i++) {
         xnum[i].style="opacity: 0.6";
+        //сделать вывод на экран 1 раз (две следующие строки)
         otvtext[i].innerHTML=r[x-1][i];
         x1m[i].innerHTML=x+' x '+ (i+1) +' = ';
         if (otvChet[i]==-1 && lv==1){driveout(i+1);}
