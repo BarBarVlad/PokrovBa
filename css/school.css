@@ -48,7 +48,7 @@ body._lock {
 }
 #.balls{}
 .balls_menu{
-
+	cursor: default;
 	padding: 17px 0px;
 	background-color: #77608d;
 	text-align: center;
@@ -72,7 +72,15 @@ body._lock {
 	text-align: center;
 	color: #7a956b;
 	position: relative;
+	transition: border 0.5s;
 }
+
+.ball:hover{
+    cursor: pointer;
+	border: 4px solid green;
+
+}
+
 .ball_text{
 
 
@@ -192,7 +200,15 @@ body._lock {
 	border: 1px solid #5e5373;
 	background-color: #77608d;
 	opacity: 0.4;
+	transition: border 1s;
 }
+
+.xnum:hover{
+    cursor: pointer;
+	border: 1px solid yellow;
+
+}
+
 .x{
 	cursor: default;
 }
@@ -206,6 +222,11 @@ body._lock {
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0px 5px;
+	transition: width 1s, height 1s;
+}
+.xlevel: hover{
+    width: 45px;
+    height: 45px;
 }
 
 .xleveltext{}
@@ -346,6 +367,13 @@ body._lock {
 	background-color: #77608d;
 	margin:5px 5px 0px 0px;
 	opacity: 0.4;
+	transition: border 1s;
+}
+
+.xlevel1:hover{
+    cursor: pointer;
+	border: 1px solid yellow;
+
 }
 
 .zadanie{
@@ -398,7 +426,16 @@ body._lock {
 	border: 1px solid #5e5373;
 	background-color: #77608d;
 	margin: 5px 15px;
+	transition: border 0.7s;
 }
+
+
+.otv:hover{
+    cursor: pointer;
+	border: 1px solid yellow;
+
+}
+
 .otvtext{
 	text-align: center;
 	color: #CCCCCF;
@@ -893,4 +930,80 @@ body._touch .menu__list > li._active .menu__arrow {
 		50%{top: 240px; left: -120px;}
 		100%{top: 240px; left: 40px;}
 	}
+/*	@keyframes b0{
+		0%{top: 0px; left: 0px;}
+		20%{top: 65px; left: 160px;}
+		40%{top: 130px; left: 0px;}
+		60%{top: 330px; left: 40px;}
+		80%{top: 145px; left: 160px;}
+		100%{top: 0px; left: 0px;}
+	}
+	@keyframes b1{
+		0%{top: 0px; left: 0px;}
+		20%{top: 165px; left: 120px;}
+		40%{top: 210px; left: -40px;}
+		60%{top: 330px; left: 40px;}
+		80%{top: 165px; left: 120px;}
+		100%{top: 0px; left: 0px;}
+	}
+	@keyframes b2{
+		0%{top: 0px; left: 0px;}
+		20%{top: 130px; left: 80px;}
+		40%{top: 330px; left: 0px;}
+		49%{top: 320px; left: -80px;}
+		74%{top: 105px; left: -80px;}
+		100%{top: 0px; left: 0px;}
+	}
+	@keyframes b3{
+		0%{top: 0px; left: 0px;}
+		20%{top: 0px; left: -120px;}
+		40%{top: 130px; left: 40px;}
+		60%{top: 330px; left: 40px;}
+		80%{top: 145px; left: -120px;}
+		100%{top: 0px; left: 0px;}
+	}
+	@keyframes b4{
+		0%{top: 0px; left: 0px;}
+		20%{top: 10px; left: -85px;}
+		35%{top: 65px; left: 0px;}
+		60%{top: 0px; left: -50px;}
+		80%{top: 105px; left: -160px;}
+		100%{top: 0px; left: 0px;}
+	}
+	@keyframes b5{
+		0%{top: 40px; left: 0px;}
+		14%{top: 148px; left: 0px;}
+		30%{top: -40px; left: 160px;}
+		60%{top: 150px; left: 160px;}
+		100%{top: 40px; left: 0px;}
+	}
+	@keyframes b6{
+		0%{top: 40px; left: 0px;}
+		14%{top: 290px; left: 0px;}
+		30%{top: -40px; left: 120px;}
+		60%{top: 290px; left: 120px;}
+		100%{top: 40px; left: 0px;}
+	}
+	@keyframes b7{
+		0%{top: 40px; left: 0px;}
+		34%{top: 290px; left: 0px;}
+		50%{top: -40px; left: 80px;}
+		70%{top: 290px; left: 80px;}
+		100%{top: 40px; left: 0px;}
+	}
+	@keyframes b8{
+		0%{top: 40px; left: 0px;}
+		35%{top: 290px; left: -120px;}
+		50%{top: 150px; left: -40px;}
+		80%{top: 40px; left: -30px;}
+		100%{top: 40px; left: 0px;}
+	}
+	@keyframes b9{
+		0%{top: 0px; left: 0px;}
+		34%{top: 100px; left: -160px;}
+		50%{top: 150px; left: -130px;}
+		60%{top: 290px; left: -160px;}
+		100%{top: 0px; left: 0px;}
+	}
+*/
 }
