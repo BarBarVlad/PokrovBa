@@ -48,7 +48,7 @@ body._lock {
 }
 #.balls{}
 .balls_menu{
-	cursor: default;
+
 	padding: 17px 0px;
 	background-color: #77608d;
 	text-align: center;
@@ -206,11 +206,6 @@ body._lock {
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0px 5px;
-	transition: width 1s, height 1s;
-}
-.xlevel: hover{
-    width: 45px;
-    height: 45px;
 }
 
 .xleveltext{}
@@ -352,6 +347,7 @@ body._lock {
 	margin:5px 5px 0px 0px;
 	opacity: 0.4;
 }
+
 .zadanie{
 	width: 180px;
 	height: 33px;
@@ -669,7 +665,7 @@ body._touch .menu__list > li._active .menu__arrow {
 
 	border: 1px;
 	width: 90px;
-	height: 100px;
+	height: auto;
 }
 .homework{
 	display: flex;
@@ -683,37 +679,20 @@ body._touch .menu__list > li._active .menu__arrow {
 .hor{
 
 }
-@media (min-width: 992px){
-	.xnum{
-		transition: border 0.7s;
-	}
-	.xnum:hover{
-	    cursor: pointer;
-		border: 1px solid #CCCCFF;
-	}
-	.otv{
-		transition: border 0.7s;
-	}
-	.otv:hover{
-	    cursor: pointer;
-		border: 1px solid #CCCCFF;
-	}
-	.xlevel1{
-		transition: border 1s;
-	}
-	.xlevel1:hover{
-	    cursor: pointer;
-		border: 1px solid #CCCCFF;
-	}
-	.ball{
-		transition: border 0.5s;
-	}
-	.ball:hover{
-	    cursor: pointer;
-		border: 4px solid #CCCCFF;
-	}
+.hor img:hover {
+
+	border: 1px solid #a54CFF;
 
 }
+.hor img:after {
+
+	max-width: 100%;
+	height: auto;
+}
+/********/
+
+/********/
+  				/**/
 @media (min-width: 767px){
 	.school{
 		align-items: center;
@@ -842,6 +821,12 @@ body._touch .menu__list > li._active .menu__arrow {
 	.page__section{
 		padding-top: 5px;
 	}
+	.hor img:after {
+
+	max-width: 300px;
+	height: auto;
+}
+
 	.pole__balls{
 		display: flex;
 		flex-wrap: wrap;
