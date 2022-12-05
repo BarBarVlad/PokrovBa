@@ -179,6 +179,7 @@ body._lock {
 			color: #000033;
 			font-size: 15px;
 			text-decoration: none;
+			padding: 5px 5px;
 		}
 		#calendarr a:hover {
 			color: FireBrick;
