@@ -146,20 +146,6 @@ body._lock {
 	color: #fff;
 }
 
-		#p01, #p11, #p21, #p31 {
-			display: table;
-			height: 20px;
-			width: 30px;
-			text-align: center;
-		}
-		#p02, #p12, #p22, #p32 {
-			display: table;
-			height: 30px;
-			max-width: 250px;
-			font-size: 18px;
-			/*text-align: center;*/
-		}
-
 /*-------------------------*/
 body._pc .menu__list > li:hover .menu__sub-list {
 	opacity: 1;
@@ -175,6 +161,16 @@ body._touch .menu__link {
 	flex: 1 1 auto;
 }
 
+/*body._touch .news__arrow{
+	display: none;
+	width: 10;
+	height: 0;
+	margin: 0px auto;
+	transition: transform 0.3s ease 0s;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 10px solid #fff;
+}*/
 body._touch .menu__arrow{
 	display: block;
 	width: 0;
@@ -202,8 +198,48 @@ body._touch .menu__list > li._active .menu__arrow {
 .page_molitvs._activ{
 	display: block;
 }
+.vdwrapper{
+	min-height: 30vh;
+/*		min-height: 100%;
+*/	overflow: hidden;
 
+	max-width: 1200px;
 
+	display: flex;
+	flex-direction: column;
+
+	justify-content: center;
+	align-items: center;
+}
+.vd{
+
+}
+.vd__item{
+	width: 400px;
+	align: right;
+}
+
+/*	.vdwr{
+	max-width: 100 px;
+	min-width: 0 px;
+	max-height: 400 px;
+	display: flex;
+	flex-direction: column;
+
+	justify-content: center;
+	align-items: center;
+	}
+	.vdwr video{
+	max-width: 100 px;
+	max-height: 400 px;
+
+	}
+	.vd__item{
+		width: 100 px;
+		padding: 0% 70%;
+		align: right;
+	}
+*/
 
 /*@media (max-width: 1200px){
 	.container{
@@ -235,6 +271,7 @@ body._touch .menu__list > li._active .menu__arrow {
 		pointer-events: none;
 		transition: all 0.3s ease 0s;
 	}
+	
 }
 
 .header__row{
@@ -264,9 +301,9 @@ body._touch .menu__list > li._active .menu__arrow {
 */	.shapka {
 		display: none;
 	}
-.container{
-	padding: 0px 0px 20px 0px;
-}
+	.container{
+		padding: 0px 0px 20px 0px;
+	}
 	.header{
 		width: 100%;
 	}
@@ -508,6 +545,7 @@ body._touch .menu__list > li._active .menu__arrow {
 		background-color: #5e5373;
 		margin-botton: 10px;
 	}
+
 	.two-block__text h2,h1{
 		font-size: 27px;
 		text-align: center;
@@ -538,11 +576,12 @@ body._touch .menu__list > li._active .menu__arrow {
 		padding: 2px 5px;
 	}
 
-}
+
 .three-block__title {
 	font-size: 25px;
 	color: #006
 	margin: 0px 0px 40px 0px;
+}
 }
 @media (min-width: 992px){
 	.three-block {
